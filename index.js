@@ -63,8 +63,7 @@ async function checkPrice() {
       }
     }
 
-    // Store the current price in memory
-    lastPrice = price;
+    lastPrice = price; // Update the lastPrice variable
   } catch (error) {
     console.error("Price check error:", error.message);
   }
@@ -72,9 +71,5 @@ async function checkPrice() {
 
 // Schedule: run every 5 minutes
 schedule.scheduleJob("*/3 * * * *", checkPrice);
-checkPrice(); // Run once immediately
 
 console.log("🚀 Telegram-only Pi Coin tracker started...");
-
-// Keep the bot running
-// setInterval(() => {}, 24 * 60 * 60 * 1000);
